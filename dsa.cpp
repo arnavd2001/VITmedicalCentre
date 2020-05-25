@@ -12,6 +12,14 @@ void DisplayScans();
 void display();
 void Bill();
 int Count();
+bool CheckNumber();
+bool CheckNumber(string s)
+{
+    if (s.length()==10)
+        return false;
+    else
+        return true;
+}
 struct patient
 {
     string name;
@@ -238,23 +246,23 @@ void Billing()
 }
 void Mainmenu()
 {
-  cout<<"                                         WELCOME TO THE VIT MEDICAL CENTRE.                  \n "<<endl;
-  cout<<"                                        +============================+          \n\n"<<endl;
+  cout<<"                                      WELCOME TO THE VIT MEDICAL CENTRE.                  "<<endl;
+  cout<<"                                        +============================+          \n"<<endl;
   cout<<"                                     THIS IS THE DEPARTMENT OF RADIOLOGY           \n   "<<endl;
   cout<<"                                        +============================+          \n\n" <<endl;
-  cout<<"The various options that are offered are:"<<endl;
+  cout<<"                                   The various options that are offered are:"<<endl;
   cout<<endl;
-  cout<<"Press 1 to see the various scans and their corresponding costs"<<endl;
+  cout<<"                                   Press 1 to see the various scans and their corresponding costs"<<endl;
   cout<<endl;
-  cout<<"Press 2 for registering a patient for a Scan"<<endl;
+  cout<<"                                   Press 2 for registering a patient for a Scan"<<endl;
   cout<<endl;
-  cout<<"Press 3 for removing Patient entry"<<endl;
+  cout<<"                                   Press 3 for removing Patient entry"<<endl;
   cout<<endl;
-  cout<<"Press 4 to see the list of patients"<<endl;
+  cout<<"                                   Press 4 to see the list of patients"<<endl;
   cout<<endl;
-  cout<<"Press 5 to obtain bill for Patient"<<endl;
+  cout<<"                                   Press 5 to obtain bill for Patient"<<endl;
   cout<<endl;
-  cout<<"Press 6 to exit:"<<endl;
+  cout<<"                                   Press 6 to exit:"<<endl;
   int choice;
   scanf("%d",&choice);
   system("cls");
@@ -280,6 +288,9 @@ void Mainmenu()
         cout <<"Enter contact no.: "<<endl;
         string phone_no;
         getline(cin,phone_no);
+        if(CheckNumber(phone_no))
+            cout<<"Please Enter a valid contact no. :"<<endl;
+            getline(cin,phone_no);
         cout<<"Enter Sex(Male/Female): "<<endl;
         string sex_val;
         getline(cin,sex_val);
@@ -689,14 +700,15 @@ struct BloodBank
 {
     char Name[20];
     char Blood[4];
-    char Email[20];
-    char phoneNumber[12];
+    string Email[20];
+    string phoneNumber[12];
     struct BloodBank *next;
 }*Profile=NULL;
 
 void Add()
 {
     system("cls");
+    string number;
     struct BloodBank *CurrNode, *NewNode;
     NewNode= (struct BloodBank*)malloc(sizeof(struct BloodBank));
     printf("Enter Name:\n");
@@ -986,24 +998,29 @@ End:
 }
 int main()
 {
-    cout<<"Welcome to VIT Medical Centre"<<endl;
-    cout<<"Enter Your Choice: "<<endl;
-    cout<<"Press 1 to book an Appointment with the Doctor"<<endl;
-    cout<<"Press 2 to book a MRI Scan with the Hospital"<<endl;
-    cout<<"Press 3 to Procure Services from the Blood Bank"<<endl;
+    cout<<"\n\n"<<endl;
+    cout<<"                                   WELCOME TO THE VIT MEDICAL CENTRE.                  "<<endl;
+    cout<<"                               +======================================+          \n"<<endl;
+    cout<<"                    Enter Your Choice: "<<endl;
+    cout<<"                    Press 1 to book an Appointment with the Doctor"<<endl;
+    cout<<"                    Press 2 to book a MRI Scan with the Hospital"<<endl;
+    cout<<"                    Press 3 to Procure Services from the Blood Bank\n"<<endl;
+    cout<<"                               +======================================+          \n" <<endl;
     int choice;
     choice=ReadNumber();
     switch(choice)
     {
     case 1:
+        system("cls");
         Appointment();
         break;
     case 2:
+        system("cls");
         Mainmenu();
         break;
     case 3:
+        system("cls");
         blood();
         break;
     }
 }
-
