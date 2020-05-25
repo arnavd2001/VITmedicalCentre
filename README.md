@@ -8,3 +8,5 @@ This is a Programme that allows the Management of Hospital Queues, MRI Scans and
 This project is designed to
 help the public who suffers from long queues in hospitals, especially the public
 hospitals, who cannot afford expensive Softwares and are generally too crowded to cater to public in an Organised way.
+
+The languauge used is C++
