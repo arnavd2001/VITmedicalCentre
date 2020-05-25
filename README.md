@@ -10,3 +10,5 @@ help the public who suffers from long queues in hospitals, especially the public
 hospitals, who cannot afford expensive Softwares and are generally too crowded to cater to public in an Organised way.
 
 The languauge used is C++
+The Project is done under the able guidance of Dr. Y V Yarlagadda who is our Course Instructor of DSA at VIT UNIVERSITY, VELLORE.
+Other Contributors to the Project are Riya Kumar, Shivank Nag and Aakaash Goyal.
