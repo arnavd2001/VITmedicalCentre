@@ -20,7 +20,7 @@ The Project is done under the able guidance of Dr. Y V Yarlagadda who is our Cou
 <br><br>
 The Data Structure used here is QUEUE.
 
-#Setting Patient Appointments.
+# Setting Patient Appointments.
 
 - We offer a Patient Appointment Generator too. 
 - This is a LinkedList Implementation, that generates the Patient Appointments effectively.
